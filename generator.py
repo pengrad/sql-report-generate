@@ -20,7 +20,7 @@ def str2file(string, file, directory="./"):
 
 
 def report_name(report, tpl, ext=".sql"):
-    return report.replace(":", "").replace(" ", "_") + "_" + tpl[0:tpl.rindex(".")] + ext
+    return report.replace(":", "").replace("-", "").replace(" ", "_") + "_" + tpl[0:tpl.rindex(".")] + ext
 
 
 def istpl(file):
