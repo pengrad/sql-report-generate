@@ -18,9 +18,7 @@ def str2file(string, file, directory="./"):
 
 
 def report_name(report, tpl, ext=".sql"):
-    report_name = report.replace(":", "").replace(" ", "_") + "_"
-    report_name += tpl[0:tpl.rindex(".")] + ext
-    return report_name
+    return report.replace(":", "").replace(" ", "_") + "_" + tpl[0:tpl.rindex(".")] + ext
 
 
 def process_dir(directory, mapping):
