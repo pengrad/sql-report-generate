@@ -36,7 +36,7 @@ def process_dir(directory, mapping):
             str2file(res, file, join(directory, REPORT_DIR))
 
 
-s = '({"report_name": "ZR iOS App (3)", "game_id": 3},{"report_name": "ZR Android App (4)", "game_id": 4})'
+s = '({"report_name": "iOS App", "game_id": 3},{"report_name": "Android App", "game_id": 4})'
 e = ast.literal_eval(s)
 
 process_dir("reports_apps", e)
