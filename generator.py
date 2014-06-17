@@ -4,6 +4,7 @@ from os import listdir, makedirs
 from os.path import join
 
 REPORT_DIR = "sql"
+TPL_EXTENSION = ".tpl"
 
 
 def file2str(file, directory="./"):
@@ -22,8 +23,12 @@ def report_name(report, tpl, ext=".sql"):
     return report.replace(":", "").replace(" ", "_") + "_" + tpl[0:tpl.rindex(".")] + ext
 
 
+def istpl(file):
+    return isfile(file) & file.endswith(TPL_EXTENSION)
+
+
 def process_dir(directory, mapping):
-    files = [f for f in listdir(directory) if isfile(join(directory, f))]
+    files = [f for f in listdir(directory) if istpl(join(directory, f))]
     for tpl_file in files:
         for m in mapping:
             file = report_name(m["report_name"], tpl_file)
